@@ -26,21 +26,25 @@ public class Bullet : MonoBehaviour
     {
         rb.velocity += accelDirection * accelAmount * Time.deltaTime;
     }
-    
+
 
     // Update is called once per frame
     void Update()
     {
-        switch(moveType)
+        switch (moveType)
         {
             case 1:
                 move1();
                 break;
         }
+        if (this.transform.position.z > 50)
+        {
+            DestroySelf();
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
-        
+
     }
     public void DestroySelf()
     {
@@ -48,6 +52,6 @@ public class Bullet : MonoBehaviour
     }
     private void OnEnable()
     {
-      //  this.gameObject.GetComponent<Animator>().Play("BulletFly");
+        //  this.gameObject.GetComponent<Animator>().Play("BulletFly");
     }
 }
