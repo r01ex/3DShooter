@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,14 +30,14 @@ public class BulletObjectPool : MonoBehaviour
         GameObject tmp;
         for (int i = 0; i < playerAmountToPool; i++)
         {
-            tmp = Instantiate(playerBulletToPool,this.transform);
+            tmp = Instantiate(playerBulletToPool, this.transform);
             tmp.SetActive(false);
             pulledPlayerBullets.Add(tmp);
         }
         pulledEnemyBullets = new List<GameObject>();
         for (int i = 0; i < amountToPool; i++)
         {
-            tmp = Instantiate(enemyBulletToPool,this.transform);
+            tmp = Instantiate(enemyBulletToPool, this.transform);
             tmp.SetActive(false);
             pulledEnemyBullets.Add(tmp);
         }
@@ -60,7 +59,6 @@ public class BulletObjectPool : MonoBehaviour
         {
             if (!pulledEnemyBullets[i].activeInHierarchy)
             {
-               // pulledEnemyBullets[i].transform.GetChild(0).gameObject.GetComponent<EnemybulletInner>().isHit = false;
                 return pulledEnemyBullets[i];
             }
         }
@@ -70,7 +68,7 @@ public class BulletObjectPool : MonoBehaviour
     {
         for (int i = 0; i < amountToPool; i++)
         {
-            pulledEnemyBullets[i].SetActive(false);           
+            pulledEnemyBullets[i].SetActive(false);
         }
         for (int i = 0; i < playerAmountToPool; i++)
         {

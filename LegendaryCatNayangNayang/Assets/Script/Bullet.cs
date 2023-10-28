@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -37,7 +35,7 @@ public class Bullet : MonoBehaviour
                 move1();
                 break;
         }
-        if (this.transform.position.z > 50)
+        if (this.transform.position.z > 70 || this.transform.position.z < -20)
         {
             DestroySelf();
         }
@@ -48,6 +46,7 @@ public class Bullet : MonoBehaviour
     }
     public void DestroySelf()
     {
+        this.transform.rotation = Quaternion.identity;
         this.gameObject.SetActive(false);
     }
     private void OnEnable()
