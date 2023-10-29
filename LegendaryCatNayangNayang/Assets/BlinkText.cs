@@ -9,6 +9,7 @@ public class BlinkText : MonoBehaviour
     private bool flag = false;
     private int stack = 0;
     public GameObject panel;
+    public GameObject Tex;
     void Start()
     {
         StartCoroutine(BlinkTexts());
@@ -23,6 +24,7 @@ public class BlinkText : MonoBehaviour
             {
                 textMeshProText.enabled = false;
                 panel.SetActive(true);
+                Tex.transform.position= new Vector3(0,-400,0);
                 break;
             }
             textMeshProText.enabled = !textMeshProText.enabled; // TextMeshPro Text의 활성화 여부를 번갈아가며 변경
@@ -35,6 +37,7 @@ public class BlinkText : MonoBehaviour
         {
             blinkInterval = 0.1f;
             flag = true ;
+
         }
     }
 }
