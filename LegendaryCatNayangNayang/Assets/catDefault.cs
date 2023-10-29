@@ -22,7 +22,7 @@ public class catDefault : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
         if (flag == 0&&gameObject.activeInHierarchy==true)
         {
      StartCoroutine("changeImg");
