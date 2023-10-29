@@ -8,6 +8,7 @@ public class BlinkText : MonoBehaviour
     public float blinkInterval = 0.5f; // 깜빡이는 간격 (초 단위)
     private bool flag = false;
     private int stack = 0;
+    public GameObject panel;
     void Start()
     {
         StartCoroutine(BlinkTexts());
@@ -21,6 +22,7 @@ public class BlinkText : MonoBehaviour
             if (stack > 4)
             {
                 textMeshProText.enabled = false;
+                panel.SetActive(true);
                 break;
             }
             textMeshProText.enabled = !textMeshProText.enabled; // TextMeshPro Text의 활성화 여부를 번갈아가며 변경
